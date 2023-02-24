@@ -1,0 +1,163 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  html {
+    --s: 100px; /* control the size */
+    --c1: #F8B195;
+    --c2: #355C7D;
+    
+    --_g: 
+       var(--c2) 6%  14%,var(--c1) 16% 24%,var(--c2) 26% 34%,var(--c1) 36% 44%,
+       var(--c2) 46% 54%,var(--c1) 56% 64%,var(--c2) 66% 74%,var(--c1) 76% 84%,var(--c2) 86% 94%;
+    background:
+      radial-gradient(100% 100% at 100% 0,var(--c1) 4%,var(--_g),#0008 96%,#0000),
+      radial-gradient(100% 100% at 0 100%,#0000, #0008 4%,var(--_g),var(--c1) 96%)
+      var(--c1);
+    background-size: var(--s) var(--s);
+  }
+
+  body{
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    background-color: #FFF9F9;
+    border: 1px solid red;
+    height: 60%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 15px;
+  }
+
+  h1{
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2rem;
+  }
+
+  #result{
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  .scoreBoard {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 2.5rem;
+    font-style: oblique;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  .you{
+    font-size: 1.5rem;
+    text-decoration: underline;
+  }
+
+  #playerScore{
+    color: #BAABDA;
+    font-size: 3rem;
+  }
+
+  #computerScore{
+    color: #D77FA1;
+    font-size: 3rem;
+  }
+
+  .computer{
+    font-size: 1.5rem;
+    text-decoration: underline;
+  }
+
+  #choices{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 6rem;
+  }
+
+  img{
+    --g: 6px;     /* the gap */
+    --b: 8px;    /* border thickness*/
+    --c: #48c0d2; /* the color */
+    
+    
+    padding: calc(var(--g) + var(--b));
+    --_c: #0000 0 25%, var(--c) 0 50%;
+    --_g1: repeating-linear-gradient(90deg ,var(--_c)) repeat-x;
+    --_g2: repeating-linear-gradient(180deg,var(--_c)) repeat-y;
+    background:
+      var(--_g1) var(--_p, 25%) 0   ,var(--_g2) 0    var(--_p,125%),
+      var(--_g1) var(--_p,125%) 100%,var(--_g2) 100% var(--_p, 25%);
+    background-size: 200% var(--b),var(--b) 200%;
+    cursor: pointer;
+    filter: grayscale(50%);
+    transition: .3s;
+  }
+
+  img:hover {
+    --_p: 75%;
+    filter: grayscale(0%);
+  }
+ 
+  #rock{
+    width: 92px;
+    height: 92px;
+  }
